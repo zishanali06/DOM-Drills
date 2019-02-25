@@ -23,18 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //funtion to change color of element
     function changeColorToNew(element) {
-        //add eventlistener to the element to change to random color
-        element.addEventListener('dblclick', function () {
-            //creating random number to select a color in the newColors array
-            let colorSelection = getRndInt(0, 8);
-
-            //changed color of text to random selected color
-            element.style.color = newColors[colorSelection];
-        });
+        let colorSelection = getRndInt(0, 8);
+        //changed color of text to random selected color
+        element.style.color = newColors[colorSelection];
     };
-
-    //calling funtion to change h1 color on doubleclick
-    changeColorToNew(newH1);
+ 
+    //calling function to change h1
+    newH1.addEventListener('dblclick', function(){
+        changeColorToNew(newH1);
+    });
 
     //create a h2 element with text and add to head-container div
     let newH2 = document.createElement('h2');
@@ -42,7 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
     newH2.appendChild(h2Text);
     newDiv.appendChild(newH2);
     newH2.className = 'h2';
-    changeColorToNew(newH2);
+    newH2.addEventListener('dblclick', function(){
+        changeColorToNew(newH2);
+    });
 
     //create a h3 element with text and add to head-container div
     let newH3 = document.createElement('h3');
@@ -50,7 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
     newH3.appendChild(h3Text);
     newDiv.appendChild(newH3);
     newH3.className = 'h3';
-    changeColorToNew(newH3);
+    newH3.addEventListener('dblclick', function(){
+        changeColorToNew(newH3);
+    });
 
     //create a h4 element with text and add to head-container div
     let newH4 = document.createElement('h4');
@@ -58,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
     newH4.appendChild(h4Text);
     newDiv.appendChild(newH4);
     newH4.className = 'h4';
-    changeColorToNew(newH4);
+    newH4.addEventListener('dblclick', function(){
+        changeColorToNew(newH4);
+    });
 
     //create a h5 element with text and add to head-container div
     let newH5 = document.createElement('h5');
@@ -66,7 +69,9 @@ document.addEventListener('DOMContentLoaded', function () {
     newH5.appendChild(h5Text);
     newDiv.appendChild(newH5);
     newH5.className = 'h5';
-    changeColorToNew(newH5);
+    newH5.addEventListener('dblclick', function(){
+        changeColorToNew(newH5);
+    });
 
     //create a h6 element with text and add to head-container div
     let newH6 = document.createElement('h6');
@@ -74,9 +79,17 @@ document.addEventListener('DOMContentLoaded', function () {
     newH6.appendChild(h6Text);
     newDiv.appendChild(newH6);
     newH6.className = 'h6';
-    changeColorToNew(newH6);
+    newH6.addEventListener('dblclick', function(){
+        changeColorToNew(newH6);
+    });
+
 
     let numberInOrder = 1;
+    //remove list item
+    function removeLi(li){
+        li.remove();
+    }
+    
     //function to add new list item
     function addNewListItem() {
         let newLi = document.createElement('li');
@@ -84,11 +97,20 @@ document.addEventListener('DOMContentLoaded', function () {
         numberInOrder++;
         newLi.appendChild(newLiText);
         document.body.appendChild(newLi);
+        newLi.addEventListener('click', function(){
+            changeColorToNew(newLi);
+        });
+        newLi.addEventListener('dblclick', function(){
+            removeLi(newLi);
+        })
+        
     };
 
     //call function to add new list item
     let button = document.querySelector('.addButton');
     button.addEventListener('click', addNewListItem);
+
+
 });
 
 
