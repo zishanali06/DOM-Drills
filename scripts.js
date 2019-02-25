@@ -1,34 +1,40 @@
 //add listender to document to listen for DOMContentLoaded
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
     let newColors = ['red', 'blue', 'green', 'maroon', 'aqua', 'purple', 'pink', 'yellow'];
 
     //funtion to generate a random number to select color from array
     function getRndInt(min, max) {
         return Math.floor(Math.random() * (max - min)) + min;
     };
-    
+
     //create new div
     let newDiv = document.createElement('div');
     newDiv.className = 'header-container';
-    
+
     //create new h1
     let newH1 = document.createElement('h1');
     let h1Text = document.createTextNode('This is an h1');
     newH1.className = 'h1';
-    
+
     //place h1 in div and div inside the body
     newH1.appendChild(h1Text);
     newDiv.appendChild(newH1);
     document.body.appendChild(newDiv);
 
-    //add eventlistener to h1 to change to random color
-    newH1.addEventListener('dblclick', function(){
-        //creating random number to select a color in the newColors array
-        let colorSelection = getRndInt(0,8);
+    //funtion to change color of element
+    function changeColorToNew(element) {
+        //add eventlistener to the element to change to random color
+        element.addEventListener('dblclick', function () {
+            //creating random number to select a color in the newColors array
+            let colorSelection = getRndInt(0, 8);
 
-        //changed color of text to random selected color
-        newH1.style.color = newColors[colorSelection];
-    });
+            //changed color of text to random selected color
+            element.style.color = newColors[colorSelection];
+        });
+    };
+
+    //calling funtion to change h1 color on doubleclick
+    changeColorToNew(newH1);
 
     //create a h2 element with text and add to head-container div
     let newH2 = document.createElement('h2');
