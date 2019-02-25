@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newH2.appendChild(h2Text);
     newDiv.appendChild(newH2);
     newH2.className = 'h2';
+    changeColorToNew(newH2);
 
     //create a h3 element with text and add to head-container div
     let newH3 = document.createElement('h3');
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newH3.appendChild(h3Text);
     newDiv.appendChild(newH3);
     newH3.className = 'h3';
+    changeColorToNew(newH3);
 
     //create a h4 element with text and add to head-container div
     let newH4 = document.createElement('h4');
@@ -56,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newH4.appendChild(h4Text);
     newDiv.appendChild(newH4);
     newH4.className = 'h4';
+    changeColorToNew(newH4);
 
     //create a h5 element with text and add to head-container div
     let newH5 = document.createElement('h5');
@@ -63,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newH5.appendChild(h5Text);
     newDiv.appendChild(newH5);
     newH5.className = 'h5';
+    changeColorToNew(newH5);
 
     //create a h6 element with text and add to head-container div
     let newH6 = document.createElement('h6');
@@ -70,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     newH6.appendChild(h6Text);
     newDiv.appendChild(newH6);
     newH6.className = 'h6';
+    changeColorToNew(newH6);
 });
 
 
