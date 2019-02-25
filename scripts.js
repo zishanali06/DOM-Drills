@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', function(){
     let newH1 = document.createElement('h1');
     let h1Text = document.createTextNode('This is an h1');
     newH1.className = 'h1';
+
+    let newColors = ['red', 'blue', 'green', 'white', 'aqua', 'purple', 'pink', 'yellow'];
+
+    //funtion to generate a random number to select color from array
+    function getRndInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    };
     
     //place h1 in div and div inside the body
     newH1.appendChild(h1Text);
@@ -49,4 +56,6 @@ document.addEventListener('DOMContentLoaded', function(){
     newDiv.appendChild(newH6);
     newH6.className = 'h6';
 });
+
+
 
