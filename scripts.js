@@ -75,7 +75,22 @@ document.addEventListener('DOMContentLoaded', function () {
     newDiv.appendChild(newH6);
     newH6.className = 'h6';
     changeColorToNew(newH6);
+
+    let numberInOrder = 1;
+    //function to add new list item
+    function addNewListItem() {
+        let newLi = document.createElement('li');
+        let newLiText = document.createTextNode('This is list item ' + numberInOrder);
+        numberInOrder++;
+        newLi.appendChild(newLiText);
+        document.body.appendChild(newLi);
+    };
+
+    //call function to add new list item
+    let button = document.querySelector('.addButton');
+    button.addEventListener('click', addNewListItem);
 });
+
 
 
 
